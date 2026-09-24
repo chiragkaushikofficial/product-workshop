@@ -1,99 +1,74 @@
-# The Product Workshop
+# From Possibility to Product
 
-A self-contained static portfolio for Chirag Kaushik. No framework, backend, API keys, analytics, cookies, external fonts, package installation, or build step.
+A self-contained portfolio for Chirag Kaushik. The portfolio is an experience of his approach to product development, not a simulation of his products.
+
+No framework, backend, API keys, analytics, cookies, external fonts, dependencies, or build step.
 
 ## Open locally
 
-Open `index.html` in a modern browser. All styles, scripts, images, and sample data live inside this directory. Nothing needs to be served from the parent directory. Clipboard access depends on browser permissions; the email link is always available.
+Open `index.html` in a modern browser. All assets are inside this directory.
 
-## Publish later
+The five-chapter journey covers understanding, design, engineering, validation, and delivery. On desktop, an accompanying system diagram progressively assembles as the visitor scrolls. On smaller screens, the complete diagram provides an overview, followed by readable chapters with sticky chapter navigation. Native links allow visitors to skip to any chapter or go straight to the work.
 
-Repository: [chiragkaushikofficial/product-workshop](https://github.com/chiragkaushikofficial/product-workshop).
+Case studies are supporting evidence, with expandable notebooks. Journey evidence links also open the relevant notebook. All chapters, notebooks, navigation, and contact information work without JavaScript; scripting enhances the diagram, mobile menu, evidence links, and email copying. Reduced-motion preferences disable smooth scrolling and transitions.
 
-Publish **the contents of this `portfolio` directory**, not its parent. The parent contains private source material that is not needed by the website. Uploading the source to GitHub and deploying a live website are separate steps; hosting must be enabled explicitly.
+There are no product demo forms, synthetic business results, simulated approval flows, or generated downloads. No visitor data is stored or transmitted.
 
-### GitHub Pages
+## Publishing
 
-1. Open the repository above. `index.html` belongs at the root, alongside `styles.css`, `script.js`, and `assets`.
-2. For later changes, update those files while preserving the directory structure.
-3. In the repository's **Settings → Pages**, choose **Deploy from a branch**, select your branch, and choose **/(root)**.
-4. Visit the Pages URL shown by GitHub when deployment finishes.
+- Repository: [chiragkaushikofficial/product-workshop](https://github.com/chiragkaushikofficial/product-workshop).
+- Production: [chirag-kaushik.vercel.app](https://chirag-kaushik.vercel.app).
+- Vercel project: `chirag-kaushik`, in the AI Developers team.
+- The connected `main` branch deploys to Vercel when updated.
 
-Relative asset paths work both on `username.github.io` and on `username.github.io/repository-name/`. `.nojekyll` tells Pages to serve the static files directly. No Actions workflow is required.
+Review changes locally and get the owner's approval before publishing. Local edits do not change the live site until they are committed to the connected repository and deployed.
 
-### Other static hosts
+Publish only the contents of this `portfolio` directory, not its parent: the parent contains private source documents that the website does not need. Keep `index.html`, `styles.css`, `script.js`, and `assets` at the repository root. No build command or SPA rewrite is needed.
 
-Use a plain/static-site configuration. No build command is needed; use `.` as the publish directory if these files are the repository root, or `portfolio` if you intentionally keep that folder in the repository. A static host that accepts folder uploads can serve this folder directly.
+For GitHub Pages, enable deployment from the intended branch and its root directory. Relative asset URLs work at both domain-root and repository-subpath locations; `.nojekyll` enables direct static serving.
 
-Do not select an SPA rewrite or a framework preset: there is no client-side router. Navigation uses native document fragments.
+The optional ZIP in the parent directory is a portable copy of this directory. Regenerate it whenever publishing a new version so it stays synchronized with the source.
 
-## Project structure
+## Structure and maintenance
 
-- `index.html`: public biography, case studies, navigation, contact details, and metadata.
-- `styles.css`: responsive visual design, keyboard focus styles, reduced-motion support, and print styles.
-- `script.js`: accessible tabs, local demos, download generation, mobile menu, and email copying.
-- `assets/chirag-kaushik.jpg`: local profile photo.
-- `assets/favicon.svg`: local site icon.
-- `.nojekyll`: GitHub Pages static-serving marker.
+- `index.html`: all public copy, chapter anchors, system illustration, case studies, biography, and metadata.
+- `styles.css`: editorial styling, progressive system illustration, responsive layouts, accessibility, and print styling.
+- `script.js`: scroll-linked illustration, current chapter state, evidence links, mobile menu, legacy links, and email copying.
+- `assets/chirag-kaushik.jpg`: profile photo.
+- `assets/favicon.svg`: site icon.
 
-## Content and publication boundaries
+Edit chapter wording and diagram captions in HTML (`data-phase` and `data-caption` on each chapter). Keep the chapter links in the same order as the chapters. Diagram `data-layer` values run from 0 through 4.
 
-- Employer details supplied only as background are intentionally excluded.
-- Echo is described as a **pilot**, not a completed public launch.
-- Lumo is described as a **concept / proposed architecture**, not a production product.
-- Prior SKU and automation stories summarize the supplied experience without exposing client records or claiming unverified metrics.
-- Product demos are not screenshots or connections to the real products.
-- Source PDFs, internal domain names, original architecture files, private endpoints, credentials, phone number, and resume are not included.
-- Before publishing, confirm you have permission to publish the product names, high-level narratives, profile photo, and contact details. Review the wording for your exact personal contribution to collaborative products.
-- Add a canonical URL and absolute social-preview image URL only after choosing your public domain. No fake production URL is embedded.
+Older `#echo` and `#lumo` links resolve to the appropriate case study when JavaScript is enabled. `#workshop` remains the journey section, and existing story/contact anchors are preserved.
 
-## Demo behavior
+## Content boundaries
 
-### Echo
+- Employer details supplied only as background remain excluded.
+- Echo is a **pilot**, not a completed public launch.
+- Lumo is a **concept / proposed architecture**, not a production implementation.
+- SKU and automation stories summarize prior experience without client records or unverified impact figures.
+- The journey describes an approach; it does not claim every project has reached every stage.
+- Product names, contribution descriptions, portrait, and contact details should be approved by the owner before publication.
+- No source PDFs, original architecture documents, internal endpoints, credentials, phone number, or resume are included.
 
-Six fictional records contain Q1/Q2 revenue, cost, and orders for North, South, and West. Results are computed, not fetched from an AI service.
+## Verification
 
-- Change the question or region, then run it.
-- Margin deliberately requires choosing gross profit or gross margin percentage.
-- Evidence shows the formula, applied scope, limitations, and contributing records.
-- Download creates a local text brief using the committed result, not unsubmitted form selections.
-- All-regions revenue: Q1 **$1,100,000**, Q2 **$1,240,000**, growth **12.7%**.
-- Q2 all-regions orders: **3,370**.
-- Q2 all-regions gross profit: **$430,000**; gross margin: **34.7%**.
-- West revenue is unchanged quarter over quarter.
-
-### Lumo
-
-A local state machine illustrates discovery, validation, review, and a reversible development preview.
-
-- The format candidate preserves all six fixture values and validates a permitted format.
-- Explicit approval is required before changing the demo state.
-- Undo revokes approval; a new approval is required to reapply.
-- Removal of `LegacyCode` remains blocked because usage evidence is absent.
-- Changing candidates or resetting starts a fresh review flow.
-- This is not an authorization implementation, DAX test runner, or enterprise safety guarantee.
-
-Demo state survives tab/project switches within the page but resets on reload. No visitor data is stored or transmitted. Email and LinkedIn links only open when clicked.
-
-## Maintenance and verification
-
-Edit static case-study copy in `index.html`. Edit the sample fixtures and architecture/decision content at the top of `script.js`. Replace the image at the same path to update the portrait.
-
-No test/build packages are required. To check JavaScript syntax with an existing Node installation:
+With an existing Node installation:
 
 ```sh
 node --check script.js
 ```
 
-Before publishing, verify:
+Before publication, verify:
 
-- Images, styles, and scripts load from a repository subpath, not just the domain root.
-- All six project/perspective combinations work with pointer and keyboard.
-- Arrow keys, Home, and End navigate the perspective tabs.
-- Echo sample calculations match the values above; filtered results and exports match the selected scope.
-- The margin clarification does not return a number until the visitor chooses a definition.
-- Lumo cannot apply before validation and approval; blocked candidates remain blocked.
-- Mobile navigation opens, closes on selection, and responds to Escape.
-- Email copying reports unavailable/denied clipboard access honestly.
-- No horizontal page overflow at narrow mobile widths or with enlarged text.
-- The core biography, project stories, and contact links remain available without JavaScript.
+- Each desktop chapter highlights the correct navigation link, caption, and cumulative diagram layers when scrolling in either direction.
+- All five chapter links work with pointer and keyboard, including direct fragment loads.
+- Mobile chapters are readable below the sticky navigation; switching between compact and desktop layouts updates the diagram.
+- All four notebooks open and close; chapter evidence links open the intended one.
+- The menu closes on navigation, Escape, and transition to desktop width.
+- Clipboard success and unavailable/denied states are reported honestly; the mail link remains usable.
+- Core content is available with JavaScript disabled.
+- Reduced-motion mode removes animation and smooth scrolling.
+- No horizontal overflow at 320, 390, 640, 768, 1024, and 1440 pixels, or when text is enlarged.
+- Images, CSS, and JavaScript load from both root and repository-subpath hosting.
+- No product simulation controls or business fixtures remain.
